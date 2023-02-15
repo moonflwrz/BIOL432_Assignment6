@@ -28,15 +28,6 @@ Clinician Sunderland,
 
 I have filtered & sequenced the contents of the patient's biofluids, as per your request, and I have evidence to believe that your patient may be infected with *Yersinia pestis* & and thus may be suffering from plague.
 
-```{r}
-
-test<-read.fasta("unknown.fasta")
-chromatogram(test,
-             width=50,
-             height=2,
-             trim3=1100)
-```
-
 Without the patient's treatment history, I cannot determine what subtype of plague the patient may be suffering from- though, from what you've described, I believe the subtype may be septicemic or possibly pneumonic.
 
 To prevent further spread, I urge you to establish a strict quarantine for the patient and anyone with similar symptoms as soon as possible. Start antimicrobial treatment of gentamicin if not already given, and be prepared to issue prophylaxis antibiotic therapy for those on your team that have interacted with the patient within the last three days, yourself included. Effective immediately, treat all fluids and tissues from the patient as infectious waste and ensure proper disposal procedure as per International Health Regulations.
