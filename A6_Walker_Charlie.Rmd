@@ -1,0 +1,48 @@
+---
+title: "A6_Walker_Charlie"
+author: "Charlie Walker"
+date: "2023-02-14"
+output: pdf_document
+---
+
+[Link to Github Repository](https://github.com/moonflwrz/BIOL432_Assignment6)
+
+```{r, da_magic}
+library(seqinr)
+library(annotate)
+
+#blastin
+unknown<-"GCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATGACCTCGCAAGAGCAAAGTGGGGGACCTTAGGGCCTCACGCCATCGGATGAACCCAGATGGGATTAGCTAGTAGGTGGGGTAATGGCTCACCTAGGCGACGATCCCTAGCTGGTCTGAGAGGATGACCAGCCACACTGGAACTGAGACACGGTCCAGACTCCTACGGGAGGCAGCAGTGGGGAATATTGCACAATGGGCGCAA"
+
+unkBLAST<-blastSequences(unknown,
+  as='data.frame',
+  timeout=200,
+  hitListSize=5)
+```
+
+This sequence isn't human, it's from *Yersinia pestis (EV76-CN)*. That's the plague!
+
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
+
+Clinician Sunderland,
+
+I have filtered & sequenced the contents of the patient's biofluids, as per your request, and I have evidence to believe that your patient may be infected with *Yersinia pestis* & and thus may be suffering from plague.
+
+```{r}
+
+test<-read.fasta("unknown.fasta")
+chromatogram(test,
+             width=50,
+             height=2,
+             trim3=1100)
+```
+
+Without the patient's treatment history, I cannot determine what subtype of plague the patient may be suffering from- though, from what you've described, I believe the subtype may be septicemic or possibly pneumonic.
+
+To prevent further spread, I urge you to establish a strict quarantine for the patient and anyone with similar symptoms as soon as possible. Start antimicrobial treatment of gentamicin if not already given, and be prepared to issue prophylaxis antibiotic therapy for those on your team that have interacted with the patient within the last three days, yourself included. Effective immediately, treat all fluids and tissues from the patient as infectious waste and ensure proper disposal procedure as per International Health Regulations.
+
+I would also recommend a serologic test for *Y. pesis* F1 antigen be administered, as to determine viral load & severity of infection. Though, situation shall be considered clinically confirmed and safety procedures will be followed unless a definite lack of infection evidence is established.
+
+Regards,
+
+Charlie Walker

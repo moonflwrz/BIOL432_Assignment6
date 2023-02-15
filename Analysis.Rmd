@@ -1,0 +1,55 @@
+---
+title: "Analysis"
+author: "Charlie Walker"
+date: "2023-02-13"
+output: pdf_document
+---
+
+[Link to Github Repository](https://github.com/moonflwrz/BIOL432_Assignment6)
+
+```{r, Part1}
+library(dplyr)
+library(tidyverse)
+
+#loading data & ID vector 
+Seq<-read.csv("Sequences.csv", 
+              header=T)
+
+ncbi_ids <- c(
+  "HQ433692.1","HQ433694.1","HQ433691.1")
+
+# HQ433692.1
+print(Seq[1,1:2])
+
+# HQ433694.1
+print(Seq[2,1:2])
+
+# HQ433691.1
+print(Seq[3,1:2])
+
+#Counting basepairs
+A<-str_count(Seq$Sequence, "A") #= 463
+Ty<-str_count(Seq$Sequence, "T") #= 343
+G<-str_count(Seq$Sequence, "G") #= 393
+C<-str_count(Seq$Sequence, "C") #= 244
+
+#basepair counts by sequence
+basepairs<-data.frame(
+  ncbi_ids, A, Ty, G, C)
+print(basepairs)
+
+#GC Content
+gc_content<-c("44.28274",
+              "44.07484",
+              "44.07484")
+gc<-data.frame(
+  ncbi_ids, gc_content)
+print(gc)
+
+
+
+```
+
+[![[A photo of Borrelia burgdorferi](https://en.wikipedia.org/wiki/Borrelia_burgdorferi)](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Borrelia_burgdorferi_%2528CDC-PHIL_-6631%2529_lores.jpg/1024px-Borrelia_burgdorferi_%2528CDC-PHIL_-6631%2529_lores.jpg){alt="Borrelia burgdorferi (CDC-PHIL -6631) lores.jpg"}](https://en.wikipedia.org/wiki/Borrelia_burgdorferi)
+
+\
